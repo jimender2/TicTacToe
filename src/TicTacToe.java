@@ -24,11 +24,10 @@ public class TicTacToe {
 		
 		//Allow User to choose game piece
 		String gamePiece = "e";		
-		do {
+		do {	
 			System.out.println("Choose your game piece (X or O):");
 			gamePiece = scan.nextLine();
-			System.out.println(gamePiece);
-		} while (gamePiece != "X");
+		} while (!gamePiece.contentEquals("X"));
 		
 		do {
 			display(board);

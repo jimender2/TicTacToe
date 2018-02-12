@@ -37,7 +37,7 @@ public class TicTacToe {
 					change = scan.nextInt();
 					change = (change - 1);
 				} while (change >=8 && change <=0);
-			} while ((board[change] == "X" || board[change] == "O"));
+			} while ((board[change] == "X" && board[change] == "O"));
 		board[change] = gamePiece;
 		win = check(board);
 		} while (win == 0);

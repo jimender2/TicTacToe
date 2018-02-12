@@ -43,9 +43,17 @@ public class TicTacToe {
 	private static int check(String board[]){
 		int value = 0;
 		if (board[0]== board[1] && board[1] == board[2]) {
-		
-			
+			value = 1;
+		} else if (board[3] == board[4] && board[4] == board[5]) {
+			value = 1;
+		} else if (board[6] == board[7] && board[7] == board[8]) {
+			value = 1;
+		} else if (board[0] == board[4] && board[4] == board[8]) {
+			value = 1;
+		} else if (board[8] == board[4] && board[4] == board[0]) {
+			value = 1;
 		}
+		
 		return value;
 	}
 

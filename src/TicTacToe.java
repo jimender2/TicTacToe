@@ -9,7 +9,7 @@ public class TicTacToe {
 		//Variables
 		String[] board = new String[9];
 		int win = 0;		
-		int change;
+		int change, change2;
 
 		//Reset Board
 		board[0] = "1";
@@ -23,11 +23,12 @@ public class TicTacToe {
 		board[8] = "9";
 		
 		//Allow User to choose game piece
-		String gamePiece = "error";		
+		String gamePiece = "e";		
 		do {
 			System.out.println("Choose your game piece (X or O):");
 			gamePiece = scan.nextLine();
-		} while (gamePiece == "X" || gamePiece == "O");
+			System.out.println(gamePiece);
+		} while (gamePiece != "X");
 		
 		do {
 			display(board);
@@ -40,6 +41,7 @@ public class TicTacToe {
 			} while ((board[change] == "X" && board[change] == "O"));
 		board[change] = gamePiece;
 		win = check(board);
+		//change2 = computer(board);
 		} while (win == 0);
 		System.out.println("Game over");
 		System.exit(0);

@@ -26,7 +26,7 @@ public class TicTacToe {
 		String gamePiece;		
 		do {
 			System.out.println("Choose your game piece (X or O):");
-			gamePiece == scan.nextL();
+			gamePiece = scan.nextLine();
 		} while (gamePiece == "X" || gamePiece == "O");
 		
 		do {

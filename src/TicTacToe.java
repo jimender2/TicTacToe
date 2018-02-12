@@ -3,9 +3,15 @@ import java.util.Scanner;
 public class TicTacToe {
 
 	public static void main(String[] args) {
+		//For Scanner
+		Scanner scan = new Scanner(System.in);
+		
 		//Variables
 		String[] board = new String[9];
-		int win = 0;
+		int win = 0;		
+		int change;
+
+		//Reset Board
 		board[0] = "1";
 		board[1] = "2";
 		board[2] = "3";
@@ -16,13 +22,20 @@ public class TicTacToe {
 		board[7] = "8";
 		board[8] = "9";
 		
-		//For Scanner
-		Scanner scan = new Scanner(System.in);
+		//Allow User to choose game piece
+		String gamePiece;		
+		do {
+			System.out.println("Choose your game piece (X or O):");
+			gamePiece == scan.nextL();
+		} while (gamePiece == "X" || gamePiece == "O");
 		
 		do {
-		display(board);
-		System.out.print("Choose a number: ");
-		
+			display(board);
+			do {
+				System.out.print("Choose a number: ");
+				change = scan.nextInt();
+			} while (board[change] == "X" || board[change] == "O");
+		board[change] = gamePiece;
 		} while (win == 0);
 	}
 	

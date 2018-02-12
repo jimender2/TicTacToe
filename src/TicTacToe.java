@@ -7,7 +7,7 @@ public class TicTacToe {
 		Scanner scan = new Scanner(System.in);
 		
 		//Variables
-		String[] board = new String[9];
+		String[] board = new String[10];
 		int win = 0;		
 		int change;
 
@@ -27,7 +27,7 @@ public class TicTacToe {
 		do {
 			System.out.println("Choose your game piece (X or O):");
 			gamePiece = scan.nextLine();
-		} while (gamePiece == "X" || gamePiece == "O");
+		} while (gamePiece != "X" || gamePiece != "O");
 		
 		do {
 			display(board);
@@ -35,6 +35,7 @@ public class TicTacToe {
 				System.out.print("Choose a number: ");
 				change = scan.nextInt();
 			} while (board[change] == "X" || board[change] == "O");
+		change = change - 1;
 		board[change] = gamePiece;
 		} while (win == 0);
 	}

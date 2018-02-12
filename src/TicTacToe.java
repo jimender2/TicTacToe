@@ -1,7 +1,9 @@
+import java.util.Scanner;
 
 public class TicTacToe {
 
 	public static void main(String[] args) {
+		//Variables
 		String[] board = new String[9];
 		int win = 0;
 		board[0] = "1";
@@ -14,8 +16,14 @@ public class TicTacToe {
 		board[7] = "8";
 		board[8] = "9";
 		
-		display(board);
+		//For Scanner
+		Scanner scan = new Scanner(System.in);
 		
+		do {
+		display(board);
+		System.out.print("Choose a number: ");
+		
+		} while (win == 0);
 	}
 	
 	private static int check(String board[]){

@@ -1,11 +1,12 @@
+import java.util.*;
 import java.util.Scanner;
+import java.lang.math;
 
 public class TicTacToe {
 
 	public static void main(String[] args) {
 		//For Scanner
 		Scanner scan = new Scanner(System.in);
-		
 		//Variables
 		String[] board = new String[9];
 		int win = 0;		
@@ -24,11 +25,16 @@ public class TicTacToe {
 		
 		//Allow User to choose game piece
 		String gamePiece = "e";		
+		String computerPiece;
 		do {	
 			System.out.println("Choose your game piece (X or O):");
 			gamePiece = scan.nextLine();
 		} while (!gamePiece.contentEquals("X"));
-		
+		if (gamePiece.contentEquals("X")) {
+			computerPiece = "O";
+		} else {
+			computerPiece = "X";
+		}
 		do {
 			display(board);
 			do {
@@ -40,11 +46,26 @@ public class TicTacToe {
 			} while ((board[change] == "X" && board[change] == "O"));
 		board[change] = gamePiece;
 		win = check(board);
-		//change2 = computer(board);
+		change = computer(board);
+		board[change] = computerPiece;
 		} while (win == 0);
 		System.out.println("Game over");
 		System.exit(0);
 	}
+	
+	//Computer
+	private static int computer(String board[]){
+		int change;
+		do {
+			do{
+			  
+				System.out.println(change);
+			} while (change >=8 || change <=0);
+		} while ((board[change] == "X" && board[change] == "O"));
+		return change;
+	}
+
+	
 	
 	//Check for a win
 	private static int check(String board[]){

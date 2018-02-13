@@ -44,8 +44,14 @@ public class TicTacToe {
 				} while (change >=8 && change <=0);
 			} while ((board[change] == "X" && board[change] == "O"));
 		board[change] = gamePiece;
+		
+		//Check for win
 		win = check(board);
+		
+		//Play computer
 		change = computer(board);
+		
+		win = check(board);
 		board[change] = computerPiece;
 		} while (win == 0);
 		System.out.println("Game over");

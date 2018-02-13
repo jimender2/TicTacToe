@@ -1,6 +1,5 @@
 import java.util.*;
 import java.util.Scanner;
-import java.lang.math;
 
 public class TicTacToe {
 
@@ -29,7 +28,7 @@ public class TicTacToe {
 		do {	
 			System.out.println("Choose your game piece (X or O):");
 			gamePiece = scan.nextLine();
-		} while (!gamePiece.contentEquals("X"));
+		} while (!gamePiece.contentEquals("X") && !gamePiece.contentEquals("O"));
 		if (gamePiece.contentEquals("X")) {
 			computerPiece = "O";
 		} else {
@@ -58,7 +57,8 @@ public class TicTacToe {
 		int change;
 		do {
 			do{
-			  
+				int random = (int)(Math.random() * 9 +1);
+				change = random;
 				System.out.println(change);
 			} while (change >=8 || change <=0);
 		} while ((board[change] == "X" && board[change] == "O"));

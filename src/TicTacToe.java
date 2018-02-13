@@ -50,7 +50,7 @@ public class TicTacToe {
 		
 		//Play computer
 		change = computer(board);
-		
+		// Check for win again
 		win = check(board);
 		board[change] = computerPiece;
 		} while (win == 0);

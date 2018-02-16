@@ -54,6 +54,7 @@ public class TicTacToe {
 		win = check(board);
 		board[change] = computerPiece;
 		} while (win == 0);
+		display(board);
 		System.out.println("Game over");
 		System.exit(0);
 	}
